@@ -1,23 +1,27 @@
 const db = require('../../data/dbConfig');
 
-function insert(sleep) {
-    return null;
+async function insert(sleep) {
+    const [id] = await db('sleeps').insert(sleep);
+    return db('sleeps').where({ id }).first();
 }
 
-function update(fields, id) {
-    return null;
+async function update(fields, id) {
+    await db('sleeps').where({ id }).update(fields);
+    return db('sleeps').where({ id }).first();
 }
 
-function remove(id) {
-    return null;
+async function remove(id) {
+    const sleep = await findById(id);
+    await db('sleeps').where({ id }).del();
+    return sleep;
 }
 
 function find() {
-    return null;
+    return db('sleeps');
 }
 
 function findById(id) {
-    return null;
+    return db('sleeps').where({ id }).first();
 }
 
 module.exports = {
