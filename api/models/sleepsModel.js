@@ -19,3 +19,11 @@ function find() {
 function findById(id) {
     return null;
 }
+
+module.exports = {
+    insert,
+    update,
+    remove,
+    find,
+    findById
+}
