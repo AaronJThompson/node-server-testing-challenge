@@ -1,19 +1,12 @@
 const router = require('express').Router();
+const { getSleeps, addSleep, updateSleep, deleteSleep } = require('../controllers/sleeps');
 
-router.get('/', async (req, res) => {
-    return null;
-});
+router.get('/', getSleeps);
 
-router.post('/', async (req, res) => {
-    return null;
-});
+router.post('/', addSleep);
 
-router.put('/:id', async (req, res) => {
-    return null;
-});
+router.put('/:id', updateSleep);
 
-router.delete('/:id', async (req, res) => {
-    return null;
-});
+router.delete('/:id', deleteSleep);
 
 module.exports = router;

@@ -8,7 +8,7 @@ test('Can get all sleeps', async () => {
         .set('Accept', 'application/json')
         .expect(200)
         .then(res => {
-            expect(typeof res.body).toBe('Array');
+            expect(Array.isArray(res.body)).toBe(true);
         });
 });
 test('Can add a sleep', async () => {
